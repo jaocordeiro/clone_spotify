@@ -1,18 +1,43 @@
 import Link from "next/link";
-import mock from "./mock";
+import InputSearch from "@/components/Input";
 
-const Navigation = () => {
+const Navigation = ({ mockNavigation, mockLibrary }: any) => {
   return (
-    <nav>
-      {mock().map((text: any) => (
-        <Link href="" className="flex items-center">
-          <div className="mr-4">
-            <img src={text.icon} alt={text.name} className="w-8" />
+    <>
+      <nav className="space-y-4">
+        {mockNavigation().map((item: any) => (
+          <Link href="" key={item.name} className="flex items-center">
+            <div className="mr-3">
+              <img src={item.icon} alt={item.name} className="w-6" />
+            </div>
+            <p className="text-base">{item.name}</p>
+          </Link>
+        ))}
+      </nav>
+      <nav className="mt-10 pt-10 border-t border-zinc-800 flex flex-col gap-3">
+        <div className="flex gap-2">
+          <div className="rounded-full w-1/3 h-6 text-xs text-white bg-sfGrey flex items-center justify-center">
+            Playlist
           </div>
-          <p>{text.name}</p>
-        </Link>
-      ))}
-    </nav>
+          <div className="rounded-full w-1/3 h-6 text-xs text-white bg-sfGrey flex items-center justify-center">
+            Artista
+          </div>
+          <div className="rounded-full w-1/3 h-6 text-xs text-white bg-sfGrey flex items-center justify-center">
+            Música
+          </div>
+        </div>
+        <InputSearch />
+        {mockLibrary().map((item: any) => (
+          <Link href="" key={item.img} className="flex">
+            <img src={item.img} alt="" className="w-12 mr-3" />
+            <div className="">
+              <p className="text-white text-sm">{item.sound}</p>
+              <p className="text-xs text-gray-400">{item.playlist}</p>
+            </div>
+          </Link>
+        ))}
+      </nav>
+    </>
   );
 };
 
