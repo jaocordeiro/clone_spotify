@@ -1,16 +1,29 @@
+import Image from "next/image";
 import Link from "next/link";
+import ButtonPlay from "../ButtonPlay";
 
-const Playlist = ({ mockLibrary }: any) => {
-  // const test = mockLibrary.slice(6);
+interface LibraryType {
+  mockLibrary: {
+    sound: string;
+    img: string;
+    playlist: string;
+  }[];
+}
+
+const Playlist = ({ mockLibrary }: LibraryType) => {
   return (
-    <section>
-      {mockLibrary().map((item: any) => (
-        <Link href="" key={item.img} className="flex">
-          <img src={item.img} alt="" className="w-12 mr-3" />
-          <div className="">
-            <p className="text-white text-sm">{item.sound}</p>
-            <p className="text-xs text-gray-400">{item.playlist}</p>
+    <section className="grid grid-cols-3 mt-8">
+      {mockLibrary.map((item) => (
+        <Link
+          href=""
+          key={item.img}
+          className="group relative flex items-center mb-5 gap-y-1.5 mr-8 rounded-xl ease-in duration-300"
+        >
+          <Image width={96} height={96} src={item.img} alt="" />
+          <div className="flex items-center w-full h-24 py-3 px-4 bg-white bg-opacity-10 backdrop-blur-xl rounded drop-shadow-lg">
+            <p className="text-white text-lg font-extrabold">{item.sound}</p>
           </div>
+          <ButtonPlay />
         </Link>
       ))}
     </section>
