@@ -13,6 +13,19 @@ module.exports = {
         sfGrey: "#3a3a3a",
         sfPurpleDark: "#1d0e42",
       },
+      keyframes: {
+        entry: {
+          "0%": {
+            width: "40px",
+          },
+          "100%": {
+            width: "100%",
+          },
+        },
+      },
+      animation: {
+        entry: "entry .3s ease-in-out forwards",
+      },
     },
   },
   plugins: [],
