@@ -1,15 +1,17 @@
-function ChevronRightIcon() {
+import { SVGProps } from "react";
+
+function ChevronRightIcon({
+  fill,
+  height,
+  width,
+  className,
+}: SVGProps<SVGSVGElement>) {
   return (
     <svg
-      fill="#ffffff"
-      xmlns="http://www.w3.org/2000/svg"
-      width={12}
-      height={12}
-      shapeRendering="geometricPrecision"
-      textRendering="geometricPrecision"
-      imageRendering="optimizeQuality"
-      fillRule="evenodd"
-      clipRule="evenodd"
+      fill={fill}
+      width={width}
+      height={height}
+      className={className}
       viewBox="0 0 298 511.93"
     >
       <path

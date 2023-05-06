@@ -9,13 +9,14 @@ interface PlayedType {
     description: string;
   }[];
   titlePlayed: string;
+  className?: string;
 }
 
-const MostPlayed = ({ mostPlayed, titlePlayed }: PlayedType) => {
+const MostPlayed = ({ mostPlayed, titlePlayed, className }: PlayedType) => {
   return (
-    <section className="grid gap-9 mt-8 mb-20">
-      <p className="text-2xl font-bold">{titlePlayed}</p>
-      <div className="flex gap-9 mt-4">
+    <section className="grid gap-9 px-6">
+      <p className="text-2xl font-bold mt-5">{titlePlayed}</p>
+      <div className={className}>
         {mostPlayed.map((item) => (
           <Link
             href=""

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import InputSearch from "@/components/Input";
+import Image from "next/image";
 
 interface MocksType {
   mockNavigation: {
@@ -20,7 +21,7 @@ const Navigation = ({ mockNavigation, mockLibrary }: MocksType) => {
         {mockNavigation.map((item) => (
           <Link href="" key={item.name} className="flex items-center">
             <div className="mr-3">
-              <img src={item.icon} alt={item.name} className="w-6" />
+              <Image width={24} height={24} src={item.icon} alt={item.name} />
             </div>
             <p className="text-base">{item.name}</p>
           </Link>
@@ -41,7 +42,13 @@ const Navigation = ({ mockNavigation, mockLibrary }: MocksType) => {
         <InputSearch />
         {mockLibrary.map((item) => (
           <Link href="" key={item.img} className="flex">
-            <img src={item.img} alt="" className="w-12 mr-3" />
+            <Image
+              width={48}
+              height={48}
+              src={item.img}
+              alt=""
+              className="mr-3"
+            />
             <div className="">
               <p className="text-white text-sm">{item.sound}</p>
               <p className="text-xs text-gray-400">{item.playlist}</p>

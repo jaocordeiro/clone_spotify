@@ -12,7 +12,7 @@ interface LibraryType {
 
 const Playlist = ({ mockLibrary }: LibraryType) => {
   return (
-    <section className="grid grid-cols-3 mt-8">
+    <section className="grid grid-cols-3 mt-8 px-6">
       {mockLibrary.map((item) => (
         <Link
           href=""
