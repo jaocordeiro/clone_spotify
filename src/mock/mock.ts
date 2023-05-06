@@ -2,15 +2,15 @@ export function mockNavigation() {
   return [
     {
       name: "Home",
-      icon: "assets/casa.png",
+      icon: "/assets/casa.png",
     },
     {
       name: "Search",
-      icon: "assets/search.png",
+      icon: "/assets/search.png",
     },
     {
       name: "Your Library",
-      icon: "assets/library.png",
+      icon: "/assets/library.png",
     },
   ];
 }
@@ -121,6 +121,31 @@ export function mockMostPlayed() {
       sound: "ACDC",
       img: "/assets/acdc.png",
       description: "Todos gostão",
+    },
+    {
+      sound: "Gusttavo Lima",
+      img: "/assets/gl.png",
+      description: "sound play Brasil",
+    },
+    {
+      sound: "Podpah",
+      img: "/assets/podpah.png",
+      description: "PodCast de sucesso",
+    },
+    {
+      sound: "Foo Fighters",
+      img: "/assets/ff.png",
+      description: "Clássico de sucesso",
+    },
+    {
+      sound: "Guilherme e Benuto",
+      img: "/assets/gb.png",
+      description: "Só as melhores",
+    },
+    {
+      sound: "Post Malone",
+      img: "/assets/pm.png",
+      description: "Internacional",
     },
   ];
 }

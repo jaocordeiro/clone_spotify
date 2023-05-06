@@ -1,14 +1,15 @@
+import Header from "@/components/Header";
 import Navigation from "@/components/Navigation";
 import Playlist from "@/components/Playlist";
 import MostPlayed from "@/components/MostPlayed";
+import Footer from "@/components/Footer";
 import { mockNavigation, mockLibrary, mockMostPlayed } from "@/mock/mock";
-import ChevronLeftIcon from "@/components/Svgs/ChevronLeft";
-import ChevronRightIcon from "@/components/Svgs/ChevronRight";
 
 export default function Home() {
   const library = mockLibrary().slice(0, 6);
   const mostPlayed = mockMostPlayed().slice(0, 5);
   const mostPlayed2 = mockMostPlayed().slice(6, 11);
+  const mostPlayed3 = mockMostPlayed().slice(11, 16);
 
   return (
     <div className="h-screen flex flex-col">
@@ -20,36 +21,29 @@ export default function Home() {
           />
         </aside>
 
-        <main className="flex-1 p-6 text-white bg-gradient-to-b from-sfPurpleDark from-10% via-sfBlack to-sfBlack">
-          <div className="flex items-center gap-3">
-            <button className="rounded-full bg-sfBlackLight p-1">
-              <ChevronLeftIcon />
-            </button>
-            <button className="rounded-full bg-sfBlackLight p-1">
-              <ChevronRightIcon />
-            </button>
-          </div>
-          <p className="text-3xl font-bold mt-8">Seja-bem vindo</p>
+        <main className="flex-1 text-white bg-gradient-to-b from-sfPurpleDark from-10% via-sfBlack to-sfBlack">
+          <Header />
+          <p className="text-3xl font-bold mt-8 p-6">Seja-bem vindo</p>
           <Playlist mockLibrary={library} />
 
           <MostPlayed
             mostPlayed={mostPlayed}
             titlePlayed="Suas músicas favoritas"
+            className="flex gap-5"
           />
           <MostPlayed
             mostPlayed={mostPlayed2}
             titlePlayed="Escute sempre que quiser"
+            className="flex gap-5"
           />
           <MostPlayed
-            mostPlayed={mostPlayed}
+            mostPlayed={mostPlayed3}
             titlePlayed="Melhores Artista - Top 10"
+            className="mb-32 flex gap-5"
           />
         </main>
       </div>
-
-      <footer className="fixed bottom-0 w-full bg-sfBlackLight border-t border-gray-900 p-6 text-white">
-        footer
-      </footer>
+      <Footer />
     </div>
   );
 }
